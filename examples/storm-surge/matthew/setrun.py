@@ -116,7 +116,7 @@ def setrun(claw_pkg='geoclaw'):
     if clawdata.output_style == 1:
         # Output nout frames at equally spaced times up to tfinal:
         # clawdata.tfinal = days2seconds(date2days('2008091400'))
-        clawdata.tfinal = days2seconds(landfall.days + 1.5) + \
+        clawdata.tfinal = days2seconds(landfall.days + 2) + \
                                        landfall.seconds
         recurrence = 4
         clawdata.num_output_times = int((clawdata.tfinal - clawdata.t0) *
@@ -169,7 +169,7 @@ def setrun(claw_pkg='geoclaw'):
     clawdata.cfl_max = 1.0
 
     # Maximum number of time steps to allow between output times:
-    clawdata.steps_max = 5000
+    clawdata.steps_max = 2**16
 
     # ------------------
     # Method to be used:
